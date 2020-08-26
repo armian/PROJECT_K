@@ -8,7 +8,10 @@
 **/*.pyc
 **/*.bak
 **/*.old
+**/*.xx
+**/*.ok
 **/__pycache__
 **/*.tar.gz
 **/start_num.txt
 ZAP_RESULT/SAVE_URLS/24.RUN_SQLMAP.sh
+ZAP_RESULT/SAVE_URLS/config.py
