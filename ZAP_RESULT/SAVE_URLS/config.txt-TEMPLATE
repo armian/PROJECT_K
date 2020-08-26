@@ -1,0 +1,60 @@
+# 전체 URL 수
+total_url_count = _TOTAL_URL_COUNT_
+
+# 화면상에 보이는 URL 수
+win_url_count = _WIN_URL_COUNT_
+
+# 첫번쨰 URL의 위치
+win_s_pos_x = _WIN_S_POS_X_
+win_s_pos_y = _WIN_S_POS_Y_
+
+# 출력 파일 입력 창 위치 
+win_out_file_pos_x = _WIN_OUT_FILE_POS_X_
+win_out_file_pos_y = _WIN_OUT_FILE_POS_Y_
+
+# 저장할 파일이름 시작부분(prefix)
+# 'url' -> 'xss', 'sql_injection' ...
+prefix = _PREFIX_
+
+# 화면 최하단의 위치(y위치만 필요)
+win_last_pos_y = _WIN_LAST_POS_Y_
+
+# 중지할 건수
+# -> all_flag 가 False인 경우, 중지할 건수
+stop_count = _STOP_COUNT_
+
+# 저장할 디렉토리명
+save_dir = _SAVE_DIR_
+
+#
+# 이 아래로는 수정하지 말 것
+#
+
+# URL들 사이의 간격 (사용하는 서버가 변경된다면 확인 필요)
+step_Y = 21
+
+# Save RAW (y position) (사용하는 서버가 변경된다면 확인 필요)
+#win_save_raw_pos_y = win_last_pos_y - 62
+win_save_raw_pos_y_step = _WIN_SAVE_RAW_POS_Y_STEP_
+
+# 마우스 '우클릭' x 좌표 + 100이 'Save RAW' x좌표의 위치
+win_save_raw_pos_x_step = 100
+
+# Request (y position) (사용하는 서버가 변경된다면 확인 필요)
+#win_req_pos_y = win_last_pos_y - 92
+win_req_pos_y_step = _WIN_REQ_POS_Y_STEP_
+
+# 마우스 '우클릭' x 좌표 + 360이 'Request' x 좌표의 위치
+win_req_pos_x_step = 360
+
+# Header (y position) : GET (사용하는 서버가 변경된다면 확인 필요)
+#win_req_header_y = win_last_pos_y - 142
+win_req_header_y_step = _WIN_REQ_HEADER_Y_STEP_
+
+# 마우스 '우클릭' x 좌표 + 458이 'Header' x 좌표의 위치 ('All'과 동일)
+win_req_header_x_step = 458
+
+# All (y position) : POST
+#win_req_all_y = win_last_pos_y - 97
+# 마우스 '우클릭' x 좌표 + 458이 'All' x 좌표의 위치 ('Header'과 동일)
+#win_req_all_x_step = win_req_header_x_step

@@ -1,0 +1,2 @@
+nmap -p80,443 -A -v SITE_NAME -oN SITE_NAME-nmap-in-detail-all.txt
+#sudo nmap -p80,443 -A -v SITE_NAME -oN SITE_NAME-nmap-in-detail-all.txt

@@ -1,0 +1,2 @@
+nmap -A -v SITE_NAME -oN SITE_NAME-nmap-in.txt
+#sudo nmap -A -v SITE_NAME -oN SITE_NAME-nmap-in.txt

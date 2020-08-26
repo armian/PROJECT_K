@@ -1,0 +1,3 @@
+echo "curl -k -I http://SITE_NAME/testxxxtest"
+echo
+curl -k -I http://SITE_NAME/testxxxtest

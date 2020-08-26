@@ -1,0 +1,6 @@
+echo "curl -k -I -X OPTIONS https://SITE_NAME"
+echo
+curl -k -I -X OPTIONS https://SITE_NAME
+echo 'curl -k -X TRACE https://SITE_NAME --header "XXX: should not be reflected"'
+echo
+curl -k -X TRACE https://SITE_NAME --header "XXX: should not be reflected"

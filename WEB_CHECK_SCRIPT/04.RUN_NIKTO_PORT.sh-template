@@ -1,0 +1,1 @@
+nikto -host SITE_NAME -port PORT -o SITE_NAME-nikto-PORT-in.txt
