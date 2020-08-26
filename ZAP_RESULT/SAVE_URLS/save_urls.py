@@ -34,7 +34,7 @@ class saveURL():
         else:
             curpos_Y = self.cfg.win_s_pos_y + self.cfg.step_Y * (self.cfg.win_url_count - 1)
             pyautogui.moveTo(curpos_X, curpos_Y)
-            time.sleep(0.1) 
+            time.sleep(0.1)
             pyautogui.click()
             time.sleep(0.1)
             pyautogui.press('down')
@@ -86,7 +86,7 @@ class saveURL():
         time.sleep(0.1)
         pyautogui.press('down')
         time.sleep(0.1)
-    
+
         # pop up 'save menu'
         pyautogui.typewrite(['enter'])
         #pyautogui.click()
@@ -122,7 +122,7 @@ if __name__ == '__main__':
     su.save_urls()
 
     if args.force:
-        print ("\n\npython ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_XSS_URL_FROM_DIR.py --input_dir [your_input_directory]\n\n")
+        print ("\n\npython ~/webhack_storage/PROJECT_K/ZAP_RESULT/XSS/22.MAKE_XSS_URL_FROM_DIR.py --input_dir [your_input_directory]\n\n")
 
     # 시작위치(터미널로)로
     pyautogui.moveTo(org_x, org_y)
@@ -133,5 +133,5 @@ if __name__ == '__main__':
     time.sleep(1)
 
     if args.force:
-        pyautogui.typewrite("python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_XSS_URL_FROM_DIR.py --input_dir ")
+        pyautogui.typewrite("python ~/webhack_storage/PROJECT_K/ZAP_RESULT/XSS/22.MAKE_XSS_URL_FROM_DIR.py --input_dir ")
         time.sleep(0.1)
