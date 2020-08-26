@@ -1,8 +1,12 @@
 .DS_Store
+config.py
 config.txt
+config.*
 output
 out_dir
 22.*.txt
 23.*.txt
 *.pyc
+*.bak
+*.old
 __pycache__
