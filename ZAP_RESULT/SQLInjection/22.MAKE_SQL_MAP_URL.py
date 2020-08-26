@@ -52,7 +52,7 @@ def touch_file(filename, header):
     header_str = "# {} ({})\n".format(header, now_str)
     out_f = open(filename, 'w')
     out_f.write(header_str)
-    out_f.write("#rm -rf ~/.sqlmap/output/YOUR_DOMAIN/\n")
+    #out_f.write("#rm -rf ~/.sqlmap/output/YOUR_DOMAIN/\n")
     out_f.close()
 
 def add_text(filename, line):
@@ -193,6 +193,8 @@ def get_pre_sqlmap_url(filename, out_pre_url_file, out_url_file):
 
 
 if __name__ == '__main__':
+    injection_code_file = "/home/armian/webhack_storage/PROJECT_K/ZAP_RESULT/SQLInjection/sql_injection_type_stack.txt.uniq"
+
     args = parser.parse_args()
 
     assert os.path.isdir(args.input_dir), "Couldn't find the given directory {}".format(args.input_dir)
@@ -204,7 +206,8 @@ if __name__ == '__main__':
     touch_file(args.out_pre_url_file, "pre_url_file")
     touch_file(args.out_url_file, "url_file")
 
-    load_injection_code("./sql_injection_type_stack.txt.uniq")
+    #load_injection_code("./sql_injection_type_stack.txt.uniq")
+    load_injection_code(injection_code_file)
 
     #print(injection_code_len)
     #print(injection_code_list)
@@ -213,4 +216,6 @@ if __name__ == '__main__':
         get_pre_sqlmap_url(file, args.out_pre_url_file, args.out_url_file)
 
 
-    print("\n\nbash {}\n\n".format(args.out_url_file))
+    #print("\n\nbash {}\n\n".format(args.out_url_file))
+    print("\n\n1) cp /home/armian/webhack_storage/PROJECT_K/ZAP_RESULT/SQLInjection/24.RUN_SQLMAP.sh .\n")
+    print("2) bash ./24.RUN_SQLMAP.sh (You should modify it before run...)")

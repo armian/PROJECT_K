@@ -63,7 +63,7 @@ def get_xss_url(filename, out_pre_url_file, out_url_file):
         add_text(out_pre_url_file, first_line)
         add_text(out_url_file, my_url)
 
-        return 
+        return
 
     if (url_list[0] == "POST"):
         # POST url?a=b  --data "c=d"
@@ -77,7 +77,7 @@ def get_xss_url(filename, out_pre_url_file, out_url_file):
         add_text(out_pre_url_file, last_line)
         add_text(out_url_file, my_url)
 
-        return 
+        return
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -93,3 +93,6 @@ if __name__ == '__main__':
 
     for file in file_list:
         get_xss_url(file, args.out_pre_url_file, args.out_url_file)
+
+    print("\n\npython ~/webhack_storage/PROJECT_K/ZAP_RESULT/XSS/23.REFINE_XSS_URL.py")
+    print("  [--input_url_file 22.url.txt --output_url_file 23.refined_url.txt]\n\n")

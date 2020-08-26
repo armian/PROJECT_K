@@ -300,8 +300,8 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
             self.lbl_msg.repaint()
             su.save_current_url(i)
 
-        msg_1 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_XSS_URL_FROM_DIR.py --input_dir\n"
-        msg_2 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_SQL_MAP_URL.py --input_dir\n"
+        msg_1 = "python ~/webhack_storage/PROJECT_K/ZAP_RESULT/XSS/22.MAKE_XSS_URL_FROM_DIR.py --input_dir\n"
+        msg_2 = "python ~/webhack_storage/PROJECT_K/ZAP_RESULT/SQLInjection/22.MAKE_SQL_MAP_URL.py --input_dir\n"
         msg = "{}{}".format(msg_1, msg_2)
         self.lbl_msg.setText(msg)
         self.lbl_msg.repaint()
@@ -311,8 +311,8 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
     def printMessage_quit(self):
         self.lbl_msg.setText("'Quit' button pressed...")
         if self.dirty_flag:
-            msg_1 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_XSS_URL_FROM_DIR.py --input_dir\n"
-            msg_2 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_SQL_MAP_URL.py --input_dir\n"
+            msg_1 = "python ~/webhack_storage/PROJECT_K/ZAP_RESULT/XSS/22.MAKE_XSS_URL_FROM_DIR.py --input_dir\n"
+            msg_2 = "python ~/webhack_storage/PROJECT_K/ZAP_RESULT/SQLInjection/22.MAKE_SQL_MAP_URL.py --input_dir\n"
             print ("\n{}{}".format(msg_1, msg_2))
         self.close()
 

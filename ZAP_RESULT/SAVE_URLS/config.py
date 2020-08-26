@@ -23,7 +23,7 @@ class Config():
         self.save_dir = "./out_dir"
 
         self.step_Y = 21
-        self.win_save_raw_pos_y_step = 100
+        self.win_save_raw_pos_y_step = 105
        
         self.win_save_raw_pos_x_step = 100
 
@@ -31,7 +31,7 @@ class Config():
    
         self.win_req_pos_x_step = 360
 
-        self.win_req_header_y_step = 142
+        self.win_req_header_y_step = 152
 
         self.win_req_header_x_step = 458
  
