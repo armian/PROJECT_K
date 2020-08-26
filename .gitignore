@@ -4,3 +4,5 @@ output
 out_dir
 22.*.txt
 23.*.txt
+*.pyc
+__pycache__
