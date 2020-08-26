@@ -71,7 +71,7 @@ class Form(QWidget):
         ##########################################################
         self.remain_time = 0
 
-        ## 0.1 Timer 
+        ## 0.1 Timer
         self.flag = 1 # 0 : 시작위치, 1 : 저장위치
 
         self.timer = QTimer(self)
@@ -88,14 +88,14 @@ class Form(QWidget):
         layout = QBoxLayout(QBoxLayout.TopToBottom, self)
         layout.addWidget(self.lcd)
         grp_0.setLayout(layout)
-        
+
         ##########################################################
         # 첫번째 그룹 (사용자 입력값 받기, QGridLayout)
         ##########################################################
         ## 1.1 최하단 위치
         self.lbl_max_y = QLabel(str(self.cfg.win_last_pos_y))
 
-        ## 1.2 전체 URL 수 
+        ## 1.2 전체 URL 수
         self.sb_url_t = QSpinBox()
         self.sb_url_t.setMinimum(1)
         self.sb_url_t.setMaximum(200)
@@ -104,7 +104,7 @@ class Form(QWidget):
 
         self.lbl_url_t = QLabel(str(self.cfg.total_url_count))
 
-        ## 1.3 화면 URL 수 
+        ## 1.3 화면 URL 수
         self.sb_url_w = QSpinBox()
         self.sb_url_w.setMinimum(1)
         self.sb_url_w.setMaximum(100)
@@ -123,7 +123,7 @@ class Form(QWidget):
         self.btn_save_XY.setMaximumWidth(200)
         self.lbl_save_XY = QLabel("({},{})".format(self.cfg.win_out_file_pos_x, self.cfg.win_out_file_pos_y))
 
-        ## 1.6 prefix 
+        ## 1.6 prefix
         self.lbl_prefix = QLabel(self.cfg.prefix)
         self.le_prefix = QLineEdit(self)
         self.le_prefix.setMaximumWidth(100)
@@ -157,7 +157,7 @@ class Form(QWidget):
         layout.addWidget(self.btn_save_XY, 4, 1)
         layout.addWidget(self.le_prefix, 5, 1)
         layout.addWidget(self.pb_save_dir, 6, 1)
-        
+
         # Grid ( , 2)
         layout.addWidget(self.lbl_max_y, 0, 2)
         layout.addWidget(self.lbl_url_t, 1, 2)
@@ -168,7 +168,7 @@ class Form(QWidget):
         layout.addWidget(self.lbl_save_dir, 6, 2)
 
         grp_1.setLayout(layout)
-        
+
         # 1번째 그룹 이벤트 정리
         self.sb_url_t.valueChanged.connect(self.value_changed_t)
         self.sb_url_w.valueChanged.connect(self.value_changed_w)
@@ -176,12 +176,12 @@ class Form(QWidget):
         self.btn_save_XY.clicked.connect(self.get_save_XY)
         self.le_prefix.textChanged[str].connect(self.onChanged)
         self.pb_save_dir.clicked.connect(self.get_save_dir)
- 
+
 
         ##########################################################
         # 두번째 그룹 (실행부, QBoxLayout)
         ##########################################################
-        # 2번째 그룹 변수들 
+        # 2번째 그룹 변수들
         self.btn_test = QPushButton("Test")
         self.btn_clear = QPushButton("Clear")
         self.btn_run  = QPushButton("Run")
@@ -271,7 +271,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
         msg = "clearing output directory...\n [{}]".format(self.cfg.save_dir)
         self.lbl_msg.setText(msg)
         self.lbl_msg.repaint()
-     
+
         time.sleep(0.5)
 
         shutil.rmtree(self.cfg.save_dir, ignore_errors=True)
@@ -286,7 +286,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
 
         err_no = self.check_save_dir()
 
-        if err_no < 0: 
+        if err_no < 0:
             msg = "error no : {}".format(err_no)
             self.lbl_msg.setText(msg)
             self.lbl_msg.repaint()
@@ -307,13 +307,13 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
         self.lbl_msg.repaint()
 
         self.dirty_flag = True
-         
+
     def printMessage_quit(self):
         self.lbl_msg.setText("'Quit' button pressed...")
         if self.dirty_flag:
             msg_1 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_XSS_URL_FROM_DIR.py --input_dir\n"
             msg_2 = "python ~/webhack_storage/COMMAND_TEMPLATE/22.MAKE_SQL_MAP_URL.py --input_dir\n"
-            print ("\n{}{}".format(msg_1, msg_2)
+            print ("\n{}{}".format(msg_1, msg_2))
         self.close()
 
     def printMessage_lcd(self, sec):
@@ -322,7 +322,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
     def value_changed_t(self):
         self.cfg.total_url_count = self.sb_url_t.value()
         self.lbl_url_t.setText(str(self.cfg.total_url_count))
-         
+
     def value_changed_w(self):
         self.cfg.win_url_count = self.sb_url_w.value()
         self.lbl_url_w.setText(str(str(self.cfg.win_url_count)))
@@ -343,7 +343,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
                 self.cfg.win_out_file_pos_x = x
                 self.cfg.win_out_file_pos_y = y
                 self.lbl_save_XY.setText(xy)
- 
+
             return
 
         sender = self.sender()
@@ -385,7 +385,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
         self.lbl_save_dir.repaint()
 
     def make_30_chars(self, str):
-        if len(str) <= 30: 
+        if len(str) <= 30:
             return str
         new_str = "..{}".format(str[-28:])
 
@@ -415,7 +415,7 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
         return fileList
 
     def check_save_dir(self):
-        if not os.path.exists(self.cfg.save_dir): 
+        if not os.path.exists(self.cfg.save_dir):
             reply = QMessageBox.question(self, "Message", "Do you want to make save_dir?",
                 QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
 
@@ -445,4 +445,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     form = Form()
     form.show()
-    exit(app.exec_()) 
+    exit(app.exec_())
