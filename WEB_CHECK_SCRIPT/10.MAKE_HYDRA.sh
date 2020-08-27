@@ -6,8 +6,8 @@ COOKIE="Cookie: (null); language=kr"
 RESPONSE="/start.asp"
 
 # CHECK USER & PASS files
-WEAK_USER_FILE="/home/armian/webhack_storage/COMMAND_TEMPLATE/weakuser.txt"
-WEAK_PASS_FILE="/home/armian/webhack_storage/COMMAND_TEMPLATE/weakpass.txt"
+WEAK_USER_FILE="/home/armian/webhack_storage/PROJECT_K/WEB_CHECK_SCRIPT/weakuser.txt"
+WEAK_PASS_FILE="/home/armian/webhack_storage/PROJECT_K/WEB_CHECK_SCRIPT/weakpass.txt"
 #WEAK_USER_FILE="weakuser.txt"
 #WEAK_PASS_FILE="weakpass.txt"
 
