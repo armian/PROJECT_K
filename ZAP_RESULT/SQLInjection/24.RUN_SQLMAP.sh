@@ -6,6 +6,8 @@ INPUT_SQL_FILE="./22.sqlmap_url.txt"
 if [ ! -f ${CACHE_FILE} ]
 then
     echo "CACHE_FILE (${CACHE_FILE}) does not exist"
+    echo "modify 'CACHE_FILE' environment variable !!"
+    echo "delete './start_num.txt' if your first time !!"
     exit
 fi
 
