@@ -5,7 +5,7 @@ from datetime import datetime
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--input_dir', default='./22.real_XSS_URLs', help="input directory")
+parser.add_argument('--input_dir', default='./22.example_XSS_URLs', help="input directory")
 parser.add_argument('--out_pre_url_file', default='./22.pre_url.txt', help="output pre url filename")
 parser.add_argument('--out_url_file', default='./22.url.txt', help="output url filename")
 
@@ -57,7 +57,7 @@ def get_xss_url(filename, out_pre_url_file, out_url_file):
 
     url_list = first_line.split()
     if (url_list[0] == "GET"):
-        my_url = "GET\t{}".format(url_list[1])
+        my_url = url_list[1]
         print(my_url)
 
         add_text(out_pre_url_file, first_line)
@@ -68,9 +68,9 @@ def get_xss_url(filename, out_pre_url_file, out_url_file):
     if (url_list[0] == "POST"):
         # POST url?a=b  --data "c=d"
         if url_list[1].find('?') > 0 :
-            my_url = "POST\t{}&{}".format(url_list[1], last_line)
+            my_url = "{}&{}".format(url_list[1], last_line)
         else:
-            my_url = "POST\t{}?{}".format(url_list[1], last_line)
+            my_url = "{}?{}".format(url_list[1], last_line)
         print(my_url)
 
         add_text(out_pre_url_file, first_line)

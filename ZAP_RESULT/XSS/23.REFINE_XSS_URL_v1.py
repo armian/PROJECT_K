@@ -56,7 +56,6 @@ def get_url_path_and_query_key(url):
 def add_url_path_key_to_dict(url_path, query_key, url):
     key = "{}\t{}".format(url_path, query_key)
     val = url
-    print("-key={}\n-val={}".format(key, val))
     if key in url_path_key_dict:
         url_list = url_path_key_dict[key]
         url_list.append(val)
@@ -96,7 +95,6 @@ if __name__ == '__main__':
     url_list = get_url_list(args.input_url_file)
     for url in url_list:
         url_path, query_key = get_url_path_and_query_key(url)
-        #print("{} -> {}".format(url_path, query_key))
         add_url_path_key_to_dict(url_path, query_key, url)
 
     #dump_dict(url_path_key_dict)
@@ -120,8 +118,7 @@ if __name__ == '__main__':
             my_key = "{}\t{}".format(k, v)
             my_v_list = url_path_key_dict[my_key]
             for my_v in my_v_list:
-                #txt = "\t{}".format(my_v)
-                txt = "\t{}".format(my_v.split()[1])  # remove GET | POST
+                txt = "\t{}".format(my_v)
                 # alert(1) -> alert(9876)
                 if args.modify == True:
                     txt = txt.replace("%281","%289876")
