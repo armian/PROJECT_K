@@ -56,7 +56,7 @@ class saveURL():
         time.sleep(0.2)
 
         # 'Save Raw'
-        raw_pos_X = curpos_X + self.cfg.win_save_raw_pos_x_step
+        raw_pos_X = self.cfg.win_save_raw_pos_x
         raw_pos_Y = self.cfg.win_save_raw_pos_y
         if self.verbose_flag:
             print("\t- rawpos : {},{}".format(raw_pos_X, raw_pos_Y))
@@ -64,24 +64,24 @@ class saveURL():
         time.sleep(0.1)
 
         # 'Request'
-        req_pos_X = curpos_X + self.cfg.win_req_pos_x_step
+        req_pos_X = self.cfg.win_req_pos_x
         req_pos_Y = self.cfg.win_req_pos_y
         if self.verbose_flag:
             print("\t- req_pos : {},{}".format(req_pos_X, req_pos_Y))
         pyautogui.moveTo(req_pos_X, req_pos_Y)
-        time.sleep(0.1)
+        time.sleep(0.3)
 
         # 'Header' or 'all'
         # 무조건 'Header'로 이동한 다음, 'down' key를 두번 누른다.
         # POST의 경우 'all'이 존재하므로 아래로 이동되고,
         # GET의 경우 'all'이 존재하지 않으므로 그 자리에 멈추어 있게 된다.
-        req_ha_pos_X = curpos_X + self.cfg.win_req_header_x_step
+        req_ha_pos_X = self.cfg.win_req_header_x
         req_ha_pos_Y = self.cfg.win_req_header_y
 
         if self.verbose_flag:
             print("\t- req_ha_pos : {},{}".format(req_ha_pos_X, req_ha_pos_Y))
         pyautogui.moveTo(req_ha_pos_X, req_ha_pos_Y)
-        time.sleep(0.1)
+        time.sleep(0.3)
         pyautogui.press('down')
         time.sleep(0.1)
         pyautogui.press('down')

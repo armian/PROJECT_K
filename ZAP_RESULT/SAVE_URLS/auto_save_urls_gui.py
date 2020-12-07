@@ -118,17 +118,32 @@ class Form(QWidget):
         self.btn_s_url_XY.setMaximumWidth(200)
         self.lbl_s_url_XY = QLabel("({},{})".format(self.cfg.win_s_pos_x, self.cfg.win_s_pos_y))
 
-        ## 1.5 파일 입력 창 위치 (X, Y)
+        ## 1.5 Save RAW 위치(X, Y)
+        self.btn_save_raw_pos_XY = QPushButton('Get', self)
+        self.btn_save_raw_pos_XY.setMaximumWidth(200)
+        self.lbl_save_raw_pos_XY = QLabel("({},{})".format(self.cfg.win_save_raw_pos_x, self.cfg.win_save_raw_pos_y))
+
+        ## 1.6 Request 위치 (X, Y)
+        self.btn_req_pos_XY = QPushButton('Get', self)
+        self.btn_req_pos_XY.setMaximumWidth(200)
+        self.lbl_req_pos_XY = QLabel("({},{})".format(self.cfg.win_req_pos_x, self.cfg.win_req_pos_y))
+
+        ## 1.7 Header 위치 (X, Y)
+        self.btn_req_header_XY = QPushButton('Get', self)
+        self.btn_req_header_XY.setMaximumWidth(200)
+        self.lbl_req_header_XY = QLabel("({},{})".format(self.cfg.win_req_header_x, self.cfg.win_req_header_y))
+
+        ## 1.8 파일 입력 창 위치 (X, Y)
         self.btn_save_XY = QPushButton('Get', self)
         self.btn_save_XY.setMaximumWidth(200)
         self.lbl_save_XY = QLabel("({},{})".format(self.cfg.win_out_file_pos_x, self.cfg.win_out_file_pos_y))
 
-        ## 1.6 prefix
+        ## 1.9 prefix
         self.lbl_prefix = QLabel(self.cfg.prefix)
         self.le_prefix = QLineEdit(self)
         self.le_prefix.setMaximumWidth(100)
 
-        ## 1.7 save directory
+        ## 1.10 save directory
         self.lbl_save_dir = QLabel(self.reduce_string(self.cfg.save_dir))
         #self.lbl_save_dir = QLabel(self.cfg.save_dir)
         self.pb_save_dir = QPushButton("Choose")
@@ -146,26 +161,35 @@ class Form(QWidget):
         layout.addWidget(QLabel('전체 URL 수'), 1, 0)
         layout.addWidget(QLabel('화면 URL 수'), 2, 0)
         layout.addWidget(QLabel('시작위치'), 3, 0)
-        layout.addWidget(QLabel('파일입력창 위치'), 4, 0)
-        layout.addWidget(QLabel('파일시작명'), 5, 0)
-        layout.addWidget(QLabel('파일저장 위치'), 6, 0)
+        layout.addWidget(QLabel('Save RAW 위치'), 4, 0)
+        layout.addWidget(QLabel('Request 위치'), 5, 0)
+        layout.addWidget(QLabel('Header 위치'), 6, 0)
+        layout.addWidget(QLabel('파일입력창 위치'), 7, 0)
+        layout.addWidget(QLabel('파일시작명'), 8, 0)
+        layout.addWidget(QLabel('파일저장 위치'), 9, 0)
 
         # Grid ( , 1)
         layout.addWidget(self.sb_url_t, 1, 1)
         layout.addWidget(self.sb_url_w, 2, 1)
         layout.addWidget(self.btn_s_url_XY, 3, 1)
-        layout.addWidget(self.btn_save_XY, 4, 1)
-        layout.addWidget(self.le_prefix, 5, 1)
-        layout.addWidget(self.pb_save_dir, 6, 1)
+        layout.addWidget(self.btn_save_raw_pos_XY, 4, 1)
+        layout.addWidget(self.btn_req_pos_XY, 5, 1)
+        layout.addWidget(self.btn_req_header_XY, 6, 1)
+        layout.addWidget(self.btn_save_XY, 7, 1)
+        layout.addWidget(self.le_prefix, 8, 1)
+        layout.addWidget(self.pb_save_dir, 9, 1)
 
         # Grid ( , 2)
         layout.addWidget(self.lbl_max_y, 0, 2)
         layout.addWidget(self.lbl_url_t, 1, 2)
         layout.addWidget(self.lbl_url_w, 2, 2)
         layout.addWidget(self.lbl_s_url_XY, 3, 2)
-        layout.addWidget(self.lbl_save_XY, 4, 2)
-        layout.addWidget(self.lbl_prefix, 5, 2)
-        layout.addWidget(self.lbl_save_dir, 6, 2)
+        layout.addWidget(self.lbl_save_raw_pos_XY, 4, 2)
+        layout.addWidget(self.lbl_req_pos_XY, 5, 2)
+        layout.addWidget(self.lbl_req_header_XY, 6, 2)
+        layout.addWidget(self.lbl_save_XY, 7, 2)
+        layout.addWidget(self.lbl_prefix, 8, 2)
+        layout.addWidget(self.lbl_save_dir, 9, 2)
 
         grp_1.setLayout(layout)
 
@@ -173,6 +197,9 @@ class Form(QWidget):
         self.sb_url_t.valueChanged.connect(self.value_changed_t)
         self.sb_url_w.valueChanged.connect(self.value_changed_w)
         self.btn_s_url_XY.clicked.connect(self.get_s_url_XY)
+        self.btn_save_raw_pos_XY.clicked.connect(self.get_save_raw_pos_XY)
+        self.btn_req_pos_XY.clicked.connect(self.get_req_pos_XY)
+        self.btn_req_header_XY.clicked.connect(self.get_req_header_XY)
         self.btn_save_XY.clicked.connect(self.get_save_XY)
         self.le_prefix.textChanged[str].connect(self.onChanged)
         self.pb_save_dir.clicked.connect(self.get_save_dir)
@@ -239,7 +266,7 @@ self.cfg.win_url_count = {}
 self.cfg.win_s_pos_(x,y) = ({},{})
 self.cfg.win_out_file_pos_(x,y) = ({},{})
 self.cfg.prefix = {}
-self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_count, self.cfg.win_url_count, self.cfg.win_s_pos_x, self.cfg.win_s_pos_y, self.cfg.win_out_file_pos_x, self.cfg.win_out_file_pos_y, self.cfg.prefix, self.cfg.stop_count)
+self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_count, self.cfg.win_url_count, self.cfg.win_s_pos_x, self.cfg.win_s_pos_y, self.cfg.win_save_raw_pos_x, self.cfg.win_save_raw_pos_y, self.cfg.win_req_pos_x, self.cfg.win_req_pos_y, sef.cfg.win_req_header_x, self.cfg.win_req_header_y, self.cfg.win_out_file_pos_x, self.cfg.win_out_file_pos_y, self.cfg.prefix, self.cfg.stop_count)
         self.lbl_msg.setText(msg)
 
         self.update_config_file()
@@ -247,7 +274,8 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
 
     def printMessage_test(self):
         self.update_config_file()
-        su = saveURL(self.config_filename, False, False, False)
+        #su = saveURL(self.config_filename, False, False, False)
+        su = saveURL(self.config_filename, True, False, False)
         for i in range(self.cfg.stop_count):
             msg = "{}th url processing...".format(i+1)
             self.lbl_msg.setText(msg)
@@ -339,12 +367,37 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
                 self.cfg.win_s_pos_x = x
                 self.cfg.win_s_pos_y = y
                 self.lbl_s_url_XY.setText(xy)
-            else:
+                 
+                return
+
+            if self.flag == 1:
+                self.cfg.win_save_raw_pos_x = x
+                self.cfg.win_save_raw_pos_y = y
+                self.lbl_save_raw_pos_XY.setText(xy)
+                 
+                return
+
+            if self.flag == 2:
+                self.cfg.win_req_pos_x = x
+                self.cfg.win_req_pos_y = y
+                self.lbl_req_pos_XY.setText(xy)
+                 
+                return
+
+            if self.flag == 3:
+                self.cfg.win_req_header_x = x
+                self.cfg.win_req_header_y = y
+                self.lbl_req_header_XY.setText(xy)
+                 
+                return
+
+            if self.flag == 4:
                 self.cfg.win_out_file_pos_x = x
                 self.cfg.win_out_file_pos_y = y
                 self.lbl_save_XY.setText(xy)
 
-            return
+                return
+
 
         sender = self.sender()
         self.remain_time = self.remain_time - 1
@@ -358,10 +411,28 @@ self.cfg.stop_count = {}""".format(self.cfg.win_last_pos_y, self.cfg.total_url_c
         self.flag = 0
         self.timer.start()
 
-    def get_save_XY(self):
+    def get_save_raw_pos_XY(self):
         #self.lbl_msg.setText("5 seconds remained...")
         self.remain_time = 6
         self.flag = 1
+        self.timer.start()
+
+    def get_req_pos_XY(self):
+        #self.lbl_msg.setText("5 seconds remained...")
+        self.remain_time = 6
+        self.flag = 2
+        self.timer.start()
+
+    def get_req_header_XY(self):
+        #self.lbl_msg.setText("5 seconds remained...")
+        self.remain_time = 6
+        self.flag = 3
+        self.timer.start()
+
+    def get_save_XY(self):
+        #self.lbl_msg.setText("5 seconds remained...")
+        self.remain_time = 6
+        self.flag = 4
         self.timer.start()
 
     def get_save_dir(self):

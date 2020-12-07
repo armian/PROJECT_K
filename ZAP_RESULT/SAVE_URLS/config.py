@@ -23,17 +23,16 @@ class Config():
         self.save_dir = "./out_dir"
 
         self.step_Y = 21
-        self.win_save_raw_pos_y_step = 62
        
-        self.win_save_raw_pos_x_step = 100
+        self.win_save_raw_pos_x = 219
+        self.win_save_raw_pos_y = 815
 
-        self.win_req_pos_y_step = 92
+        self.win_req_pos_x = 537
+        self.win_req_pos_y = 821
    
-        self.win_req_pos_x_step = 360
+        self.win_req_header_x = 717
+        self.win_req_header_y = 767
 
-        self.win_req_header_y_step = 142
-
-        self.win_req_header_x_step = 458
  
         if os.path.exists(self.config_filename):
             self.make_config_dict_from_file()
@@ -51,18 +50,13 @@ class Config():
 
             # check 'Y' position...
             self.step_Y = int(self.config_dict['step_Y'])
-            self.win_save_raw_pos_y_step = int(self.config_dict['win_save_raw_pos_y_step'])
-            self.win_save_raw_pos_x_step = int(self.config_dict['win_save_raw_pos_x_step'])
-            self.win_req_pos_y_step = int(self.config_dict['win_req_pos_y_step'])
-            self.win_req_pos_x_step = int(self.config_dict['win_req_pos_x_step'])
-            self.win_req_header_y_step = int(self.config_dict['win_req_header_y_step'])
-            self.win_req_header_x_step = int(self.config_dict['win_req_header_x_step'])
+            self.win_save_raw_pos_x = int(self.config_dict['win_save_raw_pos_x'])
+            self.win_save_raw_pos_y = int(self.config_dict['win_save_raw_pos_y'])
+            self.win_req_pos_x = int(self.config_dict['win_req_pos_x'])
+            self.win_req_pos_y = int(self.config_dict['win_req_pos_y'])
 
-        self.win_save_raw_pos_y = self.win_last_pos_y - self.win_save_raw_pos_y_step
-
-        self.win_req_pos_y = self.win_last_pos_y - self.win_req_pos_y_step
-
-        self.win_req_header_y = self.win_last_pos_y - self.win_req_header_y_step
+            self.win_req_header_x = int(self.config_dict['win_req_header_x'])
+            self.win_req_header_y = int(self.config_dict['win_req_header_y'])
 
         # update win_last_pos_y
         self.win_last_pos_y = get_win_last_pos_y()
@@ -85,18 +79,12 @@ class Config():
 
         # check 'Y' position...
         self.step_Y = int(self.config_dict['step_Y'])
-        self.win_save_raw_pos_y_step = int(self.config_dict['win_save_raw_pos_y_step'])
-        self.win_save_raw_pos_x_step = int(self.config_dict['win_save_raw_pos_x_step'])
-        self.win_req_pos_y_step = int(self.config_dict['win_req_pos_y_step'])
-        self.win_req_pos_x_step = int(self.config_dict['win_req_pos_x_step'])
-        self.win_req_header_y_step = int(self.config_dict['win_req_header_y_step'])
-        self.win_req_header_x_step = int(self.config_dict['win_req_header_x_step'])
-
-        self.win_save_raw_pos_y = self.win_last_pos_y - self.win_save_raw_pos_y_step
-
-        self.win_req_pos_y = self.win_last_pos_y - self.win_req_pos_y_step
-
-        self.win_req_header_y = self.win_last_pos_y - self.win_req_header_y_step
+        self.win_save_raw_pos_x = int(self.config_dict['win_save_raw_pos_x'])
+        self.win_save_raw_pos_y = int(self.config_dict['win_save_raw_pos_y'])
+        self.win_req_pos_x = int(self.config_dict['win_req_pos_x'])
+        self.win_req_pos_y = int(self.config_dict['win_req_pos_y'])
+        self.win_req_header_x = int(self.config_dict['win_req_header_x'])
+        self.win_req_header_y = int(self.config_dict['win_req_header_y'])
 
 
     def make_config_dict_from_file(self):
@@ -137,9 +125,12 @@ class Config():
         self.config_dict['win_last_pos_y'] = str(self.win_last_pos_y)
         self.config_dict['stop_count'] = str(self.stop_count)
         self.config_dict['save_dir'] = str(self.save_dir)
-        self.config_dict['win_save_raw_pos_y_step'] = str(self.win_save_raw_pos_y_step)
-        self.config_dict['win_req_pos_y_step'] = str(self.win_req_pos_y_step)
-        self.config_dict['win_req_header_y_step'] = str(self.win_req_header_y_step)
+        self.config_dict['win_save_raw_pos_x'] = str(self.win_save_raw_pos_x)
+        self.config_dict['win_save_raw_pos_y'] = str(self.win_save_raw_pos_y)
+        self.config_dict['win_req_pos_x'] = str(self.win_req_pos_x)
+        self.config_dict['win_req_pos_y'] = str(self.win_req_pos_y)
+        self.config_dict['win_req_header_x'] = str(self.win_req_header_x)
+        self.config_dict['win_req_header_y'] = str(self.win_req_header_y)
 
     def update_config_dict(self, k, v):
         self.config_dict[k] = v
@@ -178,17 +169,13 @@ class Config():
 
         print("self.step_Y={}".format(self.step_Y))
 
-        print("self.win_save_raw_pos_x_step={}".format(self.win_save_raw_pos_x_step))
-        print("self.win_save_raw_pos_y_step={}".format(self.win_save_raw_pos_y_step))
+        print("self.win_save_raw_pos_x={}".format(self.win_save_raw_pos_x))
         print("self.win_save_raw_pos_y={}".format(self.win_save_raw_pos_y))
 
-
-        print("self.win_req_pos_x_step={}".format(self.win_req_pos_x_step))
-        print("self.win_req_pos_y_step={}".format(self.win_req_pos_y_step))
+        print("self.win_req_pos_x={}".format(self.win_req_pos_x))
         print("self.win_req_pos_y={}".format(self.win_req_pos_y))
 
-        print("self.win_req_header_x_step={}".format(self.win_req_header_x_step))
-        print("self.win_req_header_y_step={}".format(self.win_req_header_y_step))
+        print("self.win_req_header_x={}".format(self.win_req_header_x))
         print("self.win_req_header_y={}".format(self.win_req_header_y))
 
 
